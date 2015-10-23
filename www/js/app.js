@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.rate', { // Tushar
-    url: '/event/innerrate/:event/:participant',
+    url: '/event/innerrate/:events/:participant/:name',
     views: {
       'menuContent': {
         templateUrl: 'templates/event-rate.html',
@@ -62,7 +62,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 	.state('app.rate2', { // Tushar
-    url: '/event/innerrate2/:participant',
+    url: '/event/innerrate2/:participant/:name',
     views: {
       'menuContent': {
         templateUrl: 'templates/event-rate2.html',

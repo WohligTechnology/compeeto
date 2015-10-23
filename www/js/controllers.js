@@ -2,7 +2,7 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('LoginCtrl', function($scope, $ionicModal, $timeout, MyServices, $ionicPopup, $location) {
   $scope.loginData = [];
-	$.jStorage.flush();
+  $.jStorage.flush();
   if (MyServices.getUser()) {
     $location.url("/app/event");
   }
@@ -107,14 +107,28 @@ angular.module('starter.controllers', ['starter.services'])
 })
 
 
-.controller('RateCtrl', function($scope, $stateParams, MyServices) {
+.controller('RateCtrl', function($scope, $stateParams, MyServices, $ionicPopup, $location, $timeout) {
 
-  $scope.form = {};
+  $scope.name = $stateParams.name;
+  $scope.form = {
+    comment: "",
+    score: -1
+  };
 
   $scope.postRate = function(form) {
     MyServices.postScore($stateParams.participant, form.score, form.comment, function(data) {
       $scope.event = data;
     });
+    var myPopup = $ionicPopup.show({
+      template: 'Rated Successfully',
+      title: 'Rated!',
+      scope: $scope,
+
+    });
+    $timeout(function() {
+      $location.path("app/event/inner/" + $stateParams.events);
+      myPopup.close(); //close the popup after 3 seconds for some reason
+    }, 2000);
   };
 
 
@@ -124,7 +138,7 @@ angular.module('starter.controllers', ['starter.services'])
 
 
 .controller('RateCtrl2', function($scope, $stateParams, MyServices) {
-
+  $scope.name = $stateParams.name;
   $scope.form = {};
 
   MyServices.getParticipantDetails($stateParams.participant, function(data) {

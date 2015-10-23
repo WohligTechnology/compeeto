@@ -1,13 +1,13 @@
 <ion-view ng-show="event.detail.name" view-title="{{event.detail.name}}">
 	<ion-content>
 		<div class="list" ng-if="event.detail.status=='2'">
-			<a class="item" href="#/app/event/innerrate/{{event.detail.id}}/{{userdetail.id}}" ng-repeat="userdetail in event.participant">
+			<a class="item" href="#/app/event/innerrate/{{event.detail.id}}/{{userdetail.id}}/{{userdetail.name}}" ng-repeat="userdetail in event.participant">
 				<span class="item-note">
 			<button class="button button-small button-assertive" ng-if="!userdetail.score">
 				Rate
 			</button>
 					<button class="button button-small button-balanced" ng-if="userdetail.score">
-				Rated
+				Rated - {{userdetail.score}}
 			</button>
 			</span>
 				<h2>{{userdetail.name}}</h2>
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="list" ng-if="event.detail.status=='3'">
-			<a class="item" href="#/app/event/innerrate2/{{userdetail.id}}" ng-repeat="userdetail in event.participant">
+			<a class="item" href="#/app/event/innerrate2/{{userdetail.id}}/{{userdetail.name}}" ng-repeat="userdetail in event.participant">
 				<span class="item-note">
 
 			</span>
