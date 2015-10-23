@@ -1,5 +1,5 @@
 <ion-view>
-  <ion-header-bar>
+  <ion-header-bar class="bar-positive">
     <h1 class="title">Login</h1>
   </ion-header-bar>
   <ion-content>
@@ -7,15 +7,15 @@
       <div class="list">{{user}}
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="email" ng-model="loginData.username">
+          <input ng-model="loginData.username" type="email">
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+          <input ng-model="loginData.password" type="password">
         </label>
-        <label class="item">
+        <div class="padding">
           <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+        </div>
       </div>
     </form>
   </ion-content>
