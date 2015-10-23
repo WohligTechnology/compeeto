@@ -83,11 +83,15 @@ angular.module('starter.controllers', ['starter.services'])
     console.log(data);
     $scope.event = data;
     if (data.detail.status == "3") {
-
       $scope.event.participant = _.sortBy($scope.event.participant, function(n) {
         return -1 * parseFloat(n.score);
       });
-
+    }
+    else if (data.detail.status == "2")
+    {
+      $scope.event.participant = _.sortBy($scope.event.participant, function(n) {
+        return n.name;
+      });
     }
   });
 
@@ -138,10 +142,6 @@ angular.module('starter.controllers', ['starter.services'])
       myPopup.close(); //close the popup after 3 seconds for some reason
     }, 2000);
   };
-
-
-
-
 })
 
 
