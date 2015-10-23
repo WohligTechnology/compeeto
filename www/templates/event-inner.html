@@ -3,10 +3,10 @@
 		<div class="list">
 			<a class="item" href="#/app/event/inner/rate" ng-repeat="userdetail in users">
 				<span class="item-note">
-			<button class="button button-small button-assertive">
+			<button class="button button-small button-assertive" ng-if="userdetail.ratingStatus==true;">
 				Rate
 			</button>
-					<button class="button button-small button-balanced">
+					<button class="button button-small button-balanced" ng-if="userdetail.ratingStatus==false;">
 				Rated
 			</button>
 			</span>
