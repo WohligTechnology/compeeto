@@ -1,48 +1,20 @@
 <ion-view view-title="Event Name">
+	<ion-content><ion-view view-title="Event Name">
 	<ion-content>
 		<div class="list">
-			<a class="item item-icon-left" href="#">
+			<a class="item" href="#/app/event/inner/rate" ng-repeat="userdetail in users">
 				<span class="item-note">
-			<button class="button button-danger">
+			<button class="button button-small button-assertive">
 				Rate
 			</button>
-			</span>
-				<h2>Sohan</h2>
-
-			</a>
-			<a class="item item-icon-left" href="#">
-				<span class="item-note">
-			<button class="button button-danger">
-				Rate
+					<button class="button button-small button-balanced">
+				Rated
 			</button>
 			</span>
-				<h2>  Rohan</h2>
-			</a>
-			<a class="item item-icon-left" href="#">
-				<span class="item-note">
-			<button class="button button-danger">
-				Rate
-			</button>
-			</span>
-				<h2>	 Mahesh</h2>
-			</a>
-			<a class="item item-icon-left" href="#">
-				<span class="item-note">
-			<button class="button button-danger">
-				Rate
-			</button>
-			</span>
-				<h2> Amit</h2>
-				</span>
-			</a>
-			<a class="item item-icon-left" href="#">
-				<span class="item-note">
-			<button class="button button-clam">
-				Rate
-			</button>
-			</span>
-				<h2>Jagruti</h2>
+				<h2>{{userdetail.name}}</h2>
 			</a>
 		</div>
+	</ion-content>
+</ion-view>
 	</ion-content>
 </ion-view>
