@@ -1,8 +1,8 @@
 <ion-view view-title="Event">
 	<ion-content>
 		<div class="list">
-			<a class="item" href="#/app/event/inner" ng-repeat="list in event">
-				<h2><i class="icon ion-record right" ng-class="{false: 'assertive', true: 'balanced'}[list.status]"></i> Event {{$index+1}}</h2>
+			<a class="item" href="#/app/event/inner/{{list.id}}" ng-repeat="list in event">
+				<h2><i class="icon ion-record right" ng-class="{false: 'assertive', true: 'balanced'}[list.status]"></i> {{list.name}}</h2>
 				<p class="item-note">{{list.date}}</p>
 				<span class="badge badge-assertive">{{list.status}}</span>
 			</a>

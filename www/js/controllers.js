@@ -59,7 +59,7 @@ angular.module('starter.controllers', ['starter.services'])
 			} else {
 				$scope.keepscrolling = false;
 			}
-		}, function(err){
+		}, function (err) {
 			console.log(err);
 		});
 
@@ -70,27 +70,16 @@ angular.module('starter.controllers', ['starter.services'])
 		$scope.loadEvent(++$scope.pageno);
 	}
 	$scope.loadEvent(1);
-//	$scope.event = [{
-//			id: 1,
-//			name: "Event1",
-//			date: "22/10/2015",
-//			status: true
-//},
-//		{
-//			id: 2,
-//			name: "Event2",
-//			date: "23/10/2015",
-//			status: true
-//},
-//		{
-//			id: 3,
-//			name: "Event3",
-//			date: "24/10/2015",
-//			status: true
-//}];
+
 })
 
-.controller('EventInnerCtrl', function ($scope, $stateParams) {
+.controller('EventInnerCtrl', function ($scope, $stateParams, MyServices) {
+
+
+	MyServices.getEventDetail($stateParams.id, function (data) {
+		console.log()
+	});
+
 	$scope.users = [{
 		id: 1,
 		name: 'Rohan',

@@ -40,6 +40,16 @@ angular.module('starter.services', [])
 				return $http.get(adminurl + 'getallcompetition?pageno=' + pageno, {
 					withCredentials: false
 				}).success(callback).error(err);
+			},
+			getEventDetail: function(event, callback, err) {
+				return $http({
+					url: adminurl + 'geteventdetail',
+					method: "POST",
+					data: {
+						'user':$.jStorage.get("user").id,
+						'event':event
+					}
+				}).success(callback).error(err);
 			}
 		};
 	});
