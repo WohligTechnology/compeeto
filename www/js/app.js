@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.eventinner', { // Sohan
-    url: '/event/inner/:id',
+    url: '/event/inner/:id/:event',
     views: {
       'menuContent': {
         templateUrl: 'templates/event-inner.html',

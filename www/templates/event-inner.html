@@ -1,4 +1,4 @@
-<ion-view ng-show="event.detail.name" view-title="{{event.detail.name}}">
+<ion-view ng-show="event.detail.name" view-title="{{eventname}}">
 	<ion-content>
 		<div class="list" ng-if="event.detail.status=='2'">
 			<a class="item" href="#/app/event/innerrate/{{event.detail.id}}/{{userdetail.id}}/{{userdetail.name}}" ng-repeat="userdetail in event.participant">

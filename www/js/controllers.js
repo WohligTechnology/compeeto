@@ -46,7 +46,7 @@ angular.module('starter.controllers', ['starter.services'])
   }
 })
 
-.controller('EventCtrl', function($scope, MyServices) {
+.controller('EventCtrl', function($scope, MyServices,$stateParams) {
   //	MyServices.getEvent();
   $scope.pageno = 1;
   $scope.event = [];
@@ -74,9 +74,10 @@ angular.module('starter.controllers', ['starter.services'])
 
 })
 
-.controller('EventInnerCtrl', function($scope, $stateParams, MyServices) {
+.controller('EventInnerCtrl', function($scope, $stateParams, MyServices,$stateParams) {
 
   $scope.event = {};
+	$scope.eventname=$stateParams.event;
 
   MyServices.getEventDetail($stateParams.id, function(data) {
     console.log(data);
