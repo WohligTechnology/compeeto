@@ -7,9 +7,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
-    if (window.StatusBar) {
-      StatusBar.styleDefault();
-    }
+		if (window.StatusBar) {
+			StatusBar.overlaysWebView(true);
+			StatusBar.styleLightContent();
+		}
   });
 })
 
