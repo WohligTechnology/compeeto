@@ -16,7 +16,7 @@ angular.module('starter.controllers', [])
             status: true
 },
         {
-            id: 2
+            id: 2,
             name: "Event2",
             date: "23/10/2015",
             status: true
