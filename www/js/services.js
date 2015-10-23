@@ -1,4 +1,4 @@
-var adminbase = "http://192.168.0.113/competo/";
+var adminbase = "http://wohlig.co.in/competo/";
 
 var adminurl = adminbase + "index.php/json/";
 
