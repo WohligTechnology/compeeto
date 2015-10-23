@@ -1,13 +1,11 @@
 <ion-view view-title="Event">
-    <ion-content>
-        <div class="list">
-            <a href="">
-                <div class="item" ng-repeat="list in event">
-                    <h2>{{list.name}}</h2>
-                    <p>{{list.date}}</p>
-                    <span class="badge badge-assertive">{{list.status}}</span>
-                </div>
-            </a>
-        </div>
-    </ion-content>
+	<ion-content>
+		<div class="list">
+			<a class="item" href="#/app/event/inner" ng-repeat="list in event">
+				<h2>{{list.name}}</h2>
+				<p>{{list.date}}</p>
+				<span class="badge badge-assertive">{{list.status}}</span>
+			</a>
+		</div>
+	</ion-content>
 </ion-view>
