@@ -2,9 +2,8 @@
 	<ion-content>
 		<div class="list">
 			<a class="item" href="#/app/event/inner/{{list.id}}" ng-repeat="list in event">
-				<h2><i class="icon ion-record right" ng-class="{false: 'assertive', true: 'balanced'}[list.status]"></i> {{list.name}}</h2>
-				<p class="item-note">{{list.date}}</p>
-				<span class="badge badge-assertive">{{list.status}}</span>
+				<h2><i class="icon ion-record right" ng-class="{'3': 'assertive', '2': 'balanced'}[list.status]"></i> {{list.name}}</h2>
+
 			</a>
 		</div>
 

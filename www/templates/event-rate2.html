@@ -1,0 +1,15 @@
+<ion-view view-title="Rating">
+  <ion-content>
+
+
+    <ion-item class="item-text-wrap" ng-repeat="comment in comments">
+      <span class="badge badge-energized">{{comment.score}}</span>
+      <h2>{{comment.name}}</h2>
+      <p>
+        {{comment.comments}}
+      </p>
+    </ion-item>
+
+
+  </ion-content>
+</ion-view>

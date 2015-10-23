@@ -4,7 +4,7 @@
       <div class="input-label">
         Please select rating
       </div>
-      <select>
+      <select ng-model="form.score">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -18,16 +18,12 @@
       </select>
     </label>
     <label class="item item-input">
-      <textarea placeholder="Comments"></textarea>
-    </label <div class="padding-horizontal">
-    <button class="button button-block button-positive">Submit</button>
-  </div>
-  <ion-item class="item-text-wrap">
-    <span class="badge badge-energized">5.0</span>
-    <h2>User Name</h2>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-    </p>
-  </ion-item>
-</ion-content>
+      <textarea ng-model="form.comment" placeholder="Comments"></textarea>
+    </label>
+    <div class="padding-horizontal" ng-click="postRate(form)">
+      <button class="button button-block button-positive">Submit</button>
+    </div>
+
+  
+  </ion-content>
 </ion-view>
