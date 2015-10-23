@@ -9270,3 +9270,6 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.menu-icon i {
+  color: #3597db; }
