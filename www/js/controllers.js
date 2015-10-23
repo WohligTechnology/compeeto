@@ -9,7 +9,7 @@ angular.module('starter.controllers', ['starter.services'])
   $scope.doLogin = function() {
     console.log($scope.loginData);
     MyServices.signin($scope.loginData, function(data) {
-      if (data == "false") {
+      if (data == "false" || data == "0" || data == 0) {
         var myPopup = $ionicPopup.show({
           template: '<p class="text-center">User not exist</p>',
           title: 'Login!',
@@ -46,7 +46,7 @@ angular.module('starter.controllers', ['starter.services'])
   }
 })
 
-.controller('EventCtrl', function($scope, MyServices,$stateParams) {
+.controller('EventCtrl', function($scope, MyServices, $stateParams) {
   //	MyServices.getEvent();
   $scope.pageno = 1;
   $scope.event = [];
@@ -74,10 +74,10 @@ angular.module('starter.controllers', ['starter.services'])
 
 })
 
-.controller('EventInnerCtrl', function($scope, $stateParams, MyServices,$stateParams) {
+.controller('EventInnerCtrl', function($scope, $stateParams, MyServices, $stateParams) {
 
   $scope.event = {};
-	$scope.eventname=$stateParams.event;
+  $scope.eventname = $stateParams.event;
 
   MyServices.getEventDetail($stateParams.id, function(data) {
     console.log(data);
@@ -85,7 +85,7 @@ angular.module('starter.controllers', ['starter.services'])
     if (data.detail.status == "3") {
 
       $scope.event.participant = _.sortBy($scope.event.participant, function(n) {
-        return -1*parseFloat(n.score);
+        return -1 * parseFloat(n.score);
       });
 
     }
@@ -151,9 +151,9 @@ angular.module('starter.controllers', ['starter.services'])
 
   MyServices.getParticipantDetails($stateParams.participant, function(data) {
     $scope.comments = data;
-		$scope.comments = _.sortBy($scope.comments, function(n) {
-			return -1*parseFloat(n.score);
-		});
+    $scope.comments = _.sortBy($scope.comments, function(n) {
+      return -1 * parseFloat(n.score);
+    });
   });
 
 });
