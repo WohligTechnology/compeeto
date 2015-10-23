@@ -15,10 +15,9 @@
 		</div>
 
 		<div class="list" ng-if="event.detail.status=='3'">
-			<a class="item" href="#/app/event/innerrate2/{{userdetail.id}}/{{userdetail.name}}" ng-repeat="userdetail in event.participant">
-				<span class="item-note">
+			<a class="item" href="#/app/event/innerrate2/{{userdetail.id}}/{{userdetail.name}}" ng-repeat="userdetail in event.participant|orderBy:userdetail.score:reverse">
+				<span class="badge badge-energized">{{userdetail.score|number:2}}</span>
 
-			</span>
 				<h2>{{userdetail.name}}</h2>
 			</a>
 		</div>
