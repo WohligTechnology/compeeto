@@ -81,6 +81,13 @@ angular.module('starter.controllers', ['starter.services'])
   MyServices.getEventDetail($stateParams.id, function(data) {
     console.log(data);
     $scope.event = data;
+    if (data.detail.status == "3") {
+
+      $scope.event.participant = _.sortBy($scope.event.participant, function(n) {
+        return -1*parseFloat(n.score);
+      });
+
+    }
   });
 
   $scope.users = [{
@@ -143,6 +150,9 @@ angular.module('starter.controllers', ['starter.services'])
 
   MyServices.getParticipantDetails($stateParams.participant, function(data) {
     $scope.comments = data;
+		$scope.comments = _.sortBy($scope.comments, function(n) {
+			return -1*parseFloat(n.score);
+		});
   });
 
 });
