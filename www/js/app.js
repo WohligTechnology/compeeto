@@ -18,7 +18,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('login', { // Mahesh
     url: '/login',
-    abstract: true,
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
   })
